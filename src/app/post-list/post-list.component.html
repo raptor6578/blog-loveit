@@ -1,0 +1,14 @@
+<ul class="list-group">
+  <li class="list-group-item"
+      [class.list-group-item-success]="post.loveIts > 0"
+      [class.list-group-item-danger]="post.loveIts < 0"
+      *ngFor="let post of orderPosts(posts)">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">{{post.title}}</h5>
+      <small>{{post.created_at | date:'short'}}</small>
+    </div>
+    <p class="mb-1">{{post.content}}</p>
+    <app-post-list-item [post]="post"></app-post-list-item>
+  </li>
+</ul>
+
